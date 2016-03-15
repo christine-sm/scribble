@@ -2,11 +2,11 @@
 
 
   <% @posts.each do |post| %>
-    <%= post.title %>
+    <a href="/posts/<%= post.id %>"><%= post.title %></a>
       <ul>
         <li>Updated At: <%= post.updated_at %></li>
         <li><%= post.post_body %></li>
-        <li>Tags: <%= post.tag %>  </li>  
+        <li>Tags: <%= post.tag %>  </li>
       </ul>
   <% end %>
 
