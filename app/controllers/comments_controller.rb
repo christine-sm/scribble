@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @comment = Comment.create! comment_params
+    redirect_to "/comments"
   end
 
   def new
@@ -18,6 +20,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def comment_params
+    params.require(:comment).permit(:comment_body)
   end
 
 end
