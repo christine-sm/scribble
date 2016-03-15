@@ -1,0 +1,9 @@
+<h1>Comments <a href="/comments/new">(+)</a></h1>
+
+  <% @comments.each do |comment| %>
+      <ul>
+        <li>Updated At: <%= comment.updated_at %></li>
+        <li><%= comment.comment_body %></li>
+        <li>Post ID: <%= comment.post_id %>  </li>
+      </ul>
+  <% end %>
