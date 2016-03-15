@@ -4,3 +4,13 @@
   <li><%= @post.post_body %></li>
   <li>Tags: <%= @post.tag %>  </li>
 </ul>
+
+
+  <h3>Comments</h3>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <li>
+          <%= link_to "#{comment.comment_body}", comment_path %>
+        </li>
+      <% end %>
+    </ul>
