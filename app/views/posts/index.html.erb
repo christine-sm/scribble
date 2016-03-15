@@ -1,11 +1,20 @@
 <h1>Posts</h1>
 
-<%= form_for posts_path do |f| %>
+
+  <% @posts.each do |post| %>
+    <%= post.title %>
+      <ul>
+        <li>Updated At: <%= post.updated_at %></li>
+        <li><%= post.post_body %></li>
+        <li>Tags: <%= post.tag %>  </li>  
+      </ul>
+  <% end %>
+
+<!-- <%= form_for posts_path do |f| %>
   <%= f.text_field :name %>
-<% end %>
+<% end %> -->
 
-
-<%= form_for posts_path (@post) do |f| %>
+<!-- <%= form_for posts_path (@post) do |f| %>
   <%= f.text_field :name %>
   <%= f.submit "Submit" %>
-<% end %>
+<% end %> -->
