@@ -1,0 +1,17 @@
+<h2>Make a New Post:</h2>
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <!-- <%= f.label :updated_at %>
+  <%= f.text_field :updated_at %> -->
+
+  <%= f.label :post_body %>
+  <%= f.text_field :post_body %>
+
+  <%= f.label :tag %>
+  <%= f.text_field :tag %>
+
+  <%= f.submit "Create" %>
+<% end %>
