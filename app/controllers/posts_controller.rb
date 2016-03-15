@@ -3,13 +3,20 @@ class PostsController < ApplicationController
     @posts = Post.all.order(:id).reverse
   end
 
+  def create
+  end
+
   def new
     @post = Post.new
   end
 
-  def create
-    puts "*" * 50
-    puts "I created a post"
+  def show
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
 end
