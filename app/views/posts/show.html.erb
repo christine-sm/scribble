@@ -1,9 +1,12 @@
 <h2><%= @post.title %></h2>
+
 <ul>
   <li>Updated At: <%= @post.updated_at %></li>
   <li><%= @post.post_body %></li>
   <li>Tags: <%= @post.tag %>  </li>
 </ul>
+
+<%= link_to "Edit", edit_post_path( @post ) %>
 
 
   <h3>Comments <%= link_to "(+)", new_post_comment_url( @post ) %></h3>
@@ -15,3 +18,8 @@
         </li>
       <% end %>
     </ul>
+
+
+<%= form_for @post, method: :delete do |f| %>
+  <%= f.submit "Delete Post!", class: "delete" %>
+<% end %>
