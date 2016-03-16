@@ -3,10 +3,8 @@ class CommentsController < ApplicationController
     @comments = Comment.all.order(:id)
   end
 
-  def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.create! comment_params
-    redirect_to post_path(@post)
+  def show
+    @comment = Comment.find(params[:id])
   end
 
   def new
@@ -14,14 +12,32 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def show
-    @comment = Comment.find(params[:id])
+  def create
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create! comment_params
+
+    redirect_to post_path(@post)
+  end
+
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = Song.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:post_id])
+    @comment = Song.find(params[:id])
+    @comment.update comment_params
+
+    redirect_to post_comments_path(@post, @comment)
   end
 
   def destroy
+    @post = Post.find(params[:post_id])
+    @comment = Song.find(params[:id])
+    @comment.destroy
+
+    redirect_to post_comments_path(@post)
   end
 
   private
