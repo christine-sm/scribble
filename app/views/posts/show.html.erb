@@ -6,7 +6,8 @@
   <li>Tags: <%= @post.tag %>  </li>
 </ul>
 
-<%= link_to "Edit", edit_post_path( @post ) %>
+<%= link_to "Edit Post", edit_post_path( @post ) %> | 
+<%= link_to "Back to Posts", posts_path %>
 
 
   <h3>Comments <%= link_to "(+)", new_post_comment_url( @post ) %></h3>
@@ -19,7 +20,18 @@
       <% end %>
     </ul>
 
-
 <%= form_for @post, method: :delete do |f| %>
   <%= f.submit "Delete Post!", class: "delete" %>
 <% end %>
+
+<script>
+  var deleteButton = document.querySelector("form");
+  deleteButton.addEventListener("click", preventDelete);
+
+  function preventDelete () {
+    var input = prompt("Are you sure you want to delete this post?\nType 'no' to prevent deletion.");
+    // if (input == 'no') {
+    //   break
+    // }; //HOW TO GET THIS TO WORK?
+  }
+</script>
