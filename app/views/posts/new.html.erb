@@ -1,14 +1,15 @@
 <h2>Make a New Post:</h2>
-
+<ul>
 <%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <li><%= f.label :title %>
+  <%= f.text_field :title %></li>
 
-  <%= f.label :post_body %>
-  <%= f.text_field :post_body %>
+  <li><%= f.label :post %></br>
+  <%= f.text_area :post_body, :cols => "50", :rows => "10"  %></li>
 
-  <%= f.label :tag %>
-  <%= f.text_field :tag %>
+  <li><%= f.label :tags %>
+  <%= f.text_field :tag %></li>
 
-  <%= f.submit "Create" %>
+  <li><%= f.submit "Create" %></li>
 <% end %>
+</ul>
