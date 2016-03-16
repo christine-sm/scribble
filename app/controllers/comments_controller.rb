@@ -21,20 +21,20 @@ class CommentsController < ApplicationController
 
   def edit
     @post = Post.find(params[:post_id])
-    @comment = Song.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
   def update
     @post = Post.find(params[:post_id])
-    @comment = Song.find(params[:id])
+    @comment = Comment.find(params[:id])
     @comment.update comment_params
 
-    redirect_to post_comments_path(@post, @comment)
+    redirect_to post_path(@post)
   end
 
   def destroy
     @post = Post.find(params[:post_id])
-    @comment = Song.find(params[:id])
+    @comment = Comment.find(params[:id])
     @comment.destroy
 
     redirect_to post_comments_path(@post)
