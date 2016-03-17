@@ -1,10 +1,8 @@
 <h2>Make a New Comment:</h2>
-<ul>
 <%= form_for [@post, @comment] do |f| %>
 
-  <li><%= f.label :comment %></br>
-  <%= f.text_area :comment_body, :cols => "50", :rows => "10" %></li>
+  <div><%= f.label :comment %></div>
+  <div><%= f.text_area :comment_body, :cols => "24", :rows => "4" %></div>
 
-  <li><%= f.submit "Create" %></li>
+  <div><%= f.submit "Create" %></div>
 <% end %>
-</ul>
