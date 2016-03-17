@@ -51,3 +51,7 @@ end
 group :development do
   gem "rails-erd"
 end
+
+gem 'rails_12factor'
+
+ruby '2.2.4'
