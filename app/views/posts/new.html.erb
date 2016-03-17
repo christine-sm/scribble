@@ -1,8 +1,10 @@
+<div id="back"><%= link_to "Back to Posts", posts_path %></div>
+
 <h2>Make a New Post:</h2>
 <%= form_for @post do |f| %>
   <div><%= f.label :title %>
   <%= f.text_field :title %></div>
-
+</br>
   <div><%= f.label :post %></div>
   <div><%= f.text_area :post_body, :cols => "24", :rows => "4"  %></div>
 

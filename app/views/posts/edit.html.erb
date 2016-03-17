@@ -4,12 +4,12 @@
 <%= form_for @post do |f| %>
   <div><%= f.label :title %>
   <%= f.text_field :title %></div>
-
+  </br>
   <div><%= f.label :post %></div>
   <div><%= f.text_area :post_body, :cols => "24", :rows => "4"  %></div>
 
   <div><%= f.label :tags %>
   <%= f.text_field :tag %></div>
 
-  <li><%= f.submit "Edit" %></li>
+  <div><%= f.submit "Edit" %></div>
 <% end %>
