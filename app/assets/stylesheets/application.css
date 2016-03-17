@@ -42,6 +42,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #back {
   text-align: center;
+  font-size: 1.25em;
+}
+
+#postName {
+  font-size: 1.5em;
 }
 
 .emphasis {
@@ -81,4 +86,23 @@ input[type=submit] {
     -webkit-border-radius: 5px;
     border-radius: 5px;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+  margin-top: 10px;
+  padding:5px 15px;
+  background:#ccc;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+button > a {
+  color: #333;
+}
+
+button > a:hover {
+  text-decoration: none;
 }

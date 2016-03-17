@@ -1,7 +1,7 @@
 <h1>Posts <%= link_to "(+)", new_post_path %></h1>
 
   <% @posts.each do |post| %>
-    <span class="emphasis"><%= link_to post.title, post %></span>
+    <span class="emphasis" id="postName"><%= link_to post.title, post %></span>
     <div><span class="emphasis">Updated At: </span><%= post.updated_at %></div>
     <div><%= post.post_body %></div>
     <div><span class="emphasis">Tags: </span><%= post.tag %>  </div>

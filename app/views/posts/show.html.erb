@@ -5,7 +5,7 @@
   <div><span class="emphasis">Updated At: </span><%= @post.updated_at %></div>
   <div><%= @post.post_body %></div>
   <div><span class="emphasis">Tags: </span><%= @post.tag %>  </div>
-<span class="emphasis"><%= link_to "Edit Post", edit_post_path( @post ) %></span>
+<button class="makeButton"><%= link_to "Edit Post", edit_post_path( @post ) %></button>
 
 <%= form_for @post, method: :delete do |f| %>
   <%= f.submit "Delete Entire Post!", class: "delete" %>
@@ -16,7 +16,7 @@
       <% @post.comments.each do |comment| %>
         <div><span class="emphasis">Updated At: </span><%= comment.updated_at %></div>
           <div><%= comment.comment_body %></div>
-          <div><span class="emphasis"><%= link_to "Edit Comment", edit_post_comment_url( @post, comment ) %></span></div>
+          <div><button class="makeButton"><%= link_to "Edit Comment", edit_post_comment_url( @post, comment ) %></button></div>
           <div><%= form_for [@post, comment], method: :delete do |f| %>
             <%= f.submit "Delete Comment!", class: "delete" %>
           <% end %></div>
