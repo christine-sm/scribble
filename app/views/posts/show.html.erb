@@ -2,12 +2,9 @@
 <div id="back"><%= link_to "Back to Posts", posts_path %></div>
 
 <h2><%= @post.title %></h2>
-
-<ul>
-  <li>Updated At: <%= @post.updated_at %></li>
-  <li><%= @post.post_body %></li>
-  <li>Tags: <%= @post.tag %>  </li>
-</ul>
+  <div>Updated At: <%= @post.updated_at %></div>
+  <div><%= @post.post_body %></div>
+  <div>Tags: <%= @post.tag %>  </div>
 <%= link_to "Edit Post", edit_post_path( @post ) %>
 
 <%= form_for @post, method: :delete do |f| %>
@@ -15,18 +12,16 @@
 <% end %>
 
   <h3>Comments <%= link_to "(+)", new_post_comment_url( @post ) %></h3>
-    <ul>
+
       <% @post.comments.each do |comment| %>
-        <li>
-          <%= comment.updated_at %> </br>
-          <%= comment.comment_body %> </br>
-          <%= link_to "Edit Comment", edit_post_comment_url( @post, comment ) %>
-          <%= form_for [@post, comment], method: :delete do |f| %>
+        <div><%= comment.updated_at %></div>
+          <div><%= comment.comment_body %></div>
+          <div><%= link_to "Edit Comment", edit_post_comment_url( @post, comment ) %></div>
+          <div><%= form_for [@post, comment], method: :delete do |f| %>
             <%= f.submit "Delete Comment!", class: "delete" %>
-          <% end %>
-        </li>
+          <% end %></div>
       <% end %>
-    </ul>
+
 
 <script>
   // var deleteButton = document.querySelector("form");

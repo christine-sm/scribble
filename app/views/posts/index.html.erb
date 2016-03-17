@@ -2,9 +2,8 @@
 
   <% @posts.each do |post| %>
     <a href="/posts/<%= post.id %>"><%= post.title %></a>
-      <ul>
-        <li>Updated At: <%= post.updated_at %></li>
-        <li><%= post.post_body %></li>
-        <li>Tags: <%= post.tag %>  </li>
-      </ul>
+        <div>Updated At: <%= post.updated_at %></div>
+        <div><%= post.post_body %></div>
+        <div>Tags: <%= post.tag %>  </div>
+      </br>
   <% end %>
