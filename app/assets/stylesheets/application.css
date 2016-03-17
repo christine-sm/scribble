@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ #scribble {
+   text-align: center;
+   font-size: 4em;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+   font-family: "Lobster", "Helvetica", sans-serif;
+ }
+
+ #back {
+   text-align: center;
+ }
+
+ul {
+  list-style: none;
+}

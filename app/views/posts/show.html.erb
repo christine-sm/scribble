@@ -1,3 +1,6 @@
+
+<div id="back"><%= link_to "Back to Posts", posts_path %></div>
+
 <h2><%= @post.title %></h2>
 
 <ul>
@@ -5,10 +8,11 @@
   <li><%= @post.post_body %></li>
   <li>Tags: <%= @post.tag %>  </li>
 </ul>
+<%= link_to "Edit Post", edit_post_path( @post ) %>
 
-<%= link_to "Edit Post", edit_post_path( @post ) %> |
-<%= link_to "Back to Posts", posts_path %>
-
+<%= form_for @post, method: :delete do |f| %>
+  <%= f.submit "Delete Entire Post!", class: "delete" %>
+<% end %>
 
   <h3>Comments <%= link_to "(+)", new_post_comment_url( @post ) %></h3>
     <ul>
@@ -23,10 +27,6 @@
         </li>
       <% end %>
     </ul>
-
-<%= form_for @post, method: :delete do |f| %>
-  <%= f.submit "Delete Entire Post!", class: "delete" %>
-<% end %>
 
 <script>
   // var deleteButton = document.querySelector("form");
