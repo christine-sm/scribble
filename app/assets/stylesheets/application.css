@@ -17,6 +17,19 @@
   line-height: 150%;
 }
 
+body {
+  background-color: #3b3a36;
+}
+
+#appBox {
+  background-color: #c0dfd9;
+  margin: 1em auto;
+  padding: 2em;
+  padding-top: none;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
 #scribble {
   text-align: center;
   font-size: 4em;
