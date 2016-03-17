@@ -1,11 +1,11 @@
 
-<div id="back"><%= link_to "Back to Posts", posts_path %></div>
+<div id="back" class="emphasis"><%= link_to "Back to Posts", posts_path %></div>
 
 <h2><%= @post.title %></h2>
-  <div>Updated At: <%= @post.updated_at %></div>
+  <div><span class="emphasis">Updated At: </span><%= @post.updated_at %></div>
   <div><%= @post.post_body %></div>
-  <div>Tags: <%= @post.tag %>  </div>
-<%= link_to "Edit Post", edit_post_path( @post ) %>
+  <div><span class="emphasis">Tags: </span><%= @post.tag %>  </div>
+<span class="emphasis"><%= link_to "Edit Post", edit_post_path( @post ) %></span>
 
 <%= form_for @post, method: :delete do |f| %>
   <%= f.submit "Delete Entire Post!", class: "delete" %>
@@ -14,9 +14,9 @@
   <h3>Comments <%= link_to "(+)", new_post_comment_url( @post ) %></h3>
 
       <% @post.comments.each do |comment| %>
-        <div><%= comment.updated_at %></div>
+        <div><span class="emphasis">Updated At: </span><%= comment.updated_at %></div>
           <div><%= comment.comment_body %></div>
-          <div><%= link_to "Edit Comment", edit_post_comment_url( @post, comment ) %></div>
+          <div><span class="emphasis"><%= link_to "Edit Comment", edit_post_comment_url( @post, comment ) %></span></div>
           <div><%= form_for [@post, comment], method: :delete do |f| %>
             <%= f.submit "Delete Comment!", class: "delete" %>
           <% end %></div>
