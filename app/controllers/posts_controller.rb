@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  # Nice! I think you could just do Post.all.reverse and it would work the same since,
+  # I believe that later entires will have a higher id :)
   def index
     @posts = Post.all.order(:id).reverse
   end
@@ -13,7 +15,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create! post_params
-
+    # You could actually just write `@post` for shorten syntax
     redirect_to post_path(@post)
   end
 
@@ -35,6 +37,7 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  # nice job defining private post_params!
   private
   def post_params
     params.require(:post).permit(:title, :post_body, :tag)
