@@ -51,7 +51,12 @@ end
 group :development do
   gem "rails-erd"
 end
+# These are causing an error when I try to start up the rails server
+# gem 'rails_12factor'
+#
+# ruby '2.2.3'
 
-gem 'rails_12factor'
-
-ruby '2.2.3'
+# It should be outlined in a production block like so:
+group :production do
+  gem 'rails_12factor'
+end
